@@ -58,8 +58,15 @@ function onSelect({ itemIndex }: { itemIndex: number }) {
 </script>
 
 <template>
-  <Drawer class="h-[90vh]" :expanded="expanded" position="start" mode="push" :mini="true" :items="items"
-    @select="onSelect">
+  <Drawer
+    class="h-[90vh]"
+    :expanded="expanded"
+    position="start"
+    mode="push"
+    :mini="true"
+    :items="items"
+    @select="onSelect"
+  >
     <DrawerContent class="max-w-full overflow-hidden">
       <div class="p-5">
         <router-view />

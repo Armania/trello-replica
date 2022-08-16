@@ -53,15 +53,24 @@ const getCoolGradient = (index: number) => {
 </script>
 
 <template>
-  <h1 class="mb-5 text-3xl">Boards</h1>
-  <div class="flex flex-wrap gap-2">
-    <div class="border rounded-md bg-gradient-to-tr" v-for="(board, index) in boards" :key="board.id"
-      :class="getCoolGradient(index)">
-      <BoardCard :board="board" class="transition transform duration-100 ease-in border rounded-md hover:-rotate-3" />
+  <div>
+    <h1 class="mb-5 text-3xl">Boards</h1>
+    <div class="flex flex-wrap gap-2">
+      <div
+        class="border rounded-md bg-gradient-to-tr"
+        v-for="(board, index) in boards"
+        :key="board.id"
+        :class="getCoolGradient(index)"
+      >
+        <BoardCard
+          :board="board"
+          class="transition transform duration-100 ease-in border rounded-md hover:-rotate-3"
+        />
+      </div>
+      <button class="text-gray-500" @click="handleBoardCreate">
+        <span>New Board +</span>
+      </button>
     </div>
-    <button class="text-gray-500" @click="handleBoardCreate">
-      <span>New Board +</span>
-    </button>
+    <AppLoader v-if="loading" :overlay="true" />
   </div>
-  <AppLoader v-if="loading" :overlay="true" />
 </template>

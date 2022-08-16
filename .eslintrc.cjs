@@ -9,6 +9,7 @@ module.exports = {
     "@vue/eslint-config-typescript/recommended",
     "@vue/eslint-config-prettier"
   ],
+  "plugins": ["prettier"],
   "overrides": [
     {
       "files": [
@@ -18,5 +19,10 @@ module.exports = {
         "plugin:cypress/recommended"
       ]
     }
-  ]
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "singleAttributePerLine:": false,
+    "endOfLine": "auto",
+  }
 }
